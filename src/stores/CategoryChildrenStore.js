@@ -92,4 +92,4 @@ class CategoryChildrenStore extends GuildChannelStore {
   }
 }
 
-module.exports = GuildChannelStore;
+module.exports = CategoryChildrenStore;
