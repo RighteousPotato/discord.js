@@ -1,6 +1,7 @@
 'use strict';
 
 const GuildChannel = require('./GuildChannel');
+const CategoryChildrenStore = require('../stores/CategoryChildrenStore');
 
 /**
  * Represents a guild category channel on Discord.
@@ -9,11 +10,11 @@ const GuildChannel = require('./GuildChannel');
 class CategoryChannel extends GuildChannel {
   /**
    * Channels that are a part of this category
-   * @type {?Collection<Snowflake, GuildChannel>}
+   * @type {?CategoryChildrenStore<Snowflake, GuildChannel>}
    * @readonly
    */
   get children() {
-    return this.guild.channels.filter(c => c.parentID === this.id);
+    return new CategoryChildrenStore(this, this.guild.channels.filter(c => c.parentID === this.id).array());
   }
 
   /**
