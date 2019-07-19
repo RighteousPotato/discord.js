@@ -67,7 +67,7 @@ class CategoryChildrenStore extends GuildChannelStore {
       reason,
     } = options;
     if (type && !['text', 'voice'].includes(type)) throw new TypeError('Type must be either \'text\' or \'voice\'.');
-    parent = this.client.channels.resolveID(this._parent);
+    const parent = this.client.channels.resolveID(this._parent);
     
     if (permissionOverwrites) {
       permissionOverwrites = permissionOverwrites.map(o => PermissionOverwrites.resolve(o, this.guild));
