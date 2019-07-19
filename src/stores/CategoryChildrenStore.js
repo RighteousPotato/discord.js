@@ -16,7 +16,7 @@ class CategoryChildrenStore extends GuildChannelStore {
 
   /**
      * The parent {@link CategoryChannel} of the {@link GuildChannel}s in this store
-     * @type {?CategoryChannel}
+     * @type {CategoryChannel}
      * @readonly
      */
   get parent() {
