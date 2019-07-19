@@ -9,8 +9,8 @@ const PermissionOverwrites = require('../structures/PermissionOverwrites');
  * @extends {GuildChannelStore}
  */
 class CategoryChildrenStore extends GuildChannelStore {
-  constructor(guild, iterable, parent) {
-    super(guild, iterable);
+  constructor(parent, iterable) {
+    super(parent.guild, iterable);
     this._parent = parent;
   }
 
